@@ -12,7 +12,7 @@ export const initialState = {
 
 const app = (state = initialState, action) => {
   switch (action.type) {
-    case actions.RESTORE_STATE: {
+    case actions.SET_STATE: {
       return Object.assign({}, action.payload);
     }
     default: {

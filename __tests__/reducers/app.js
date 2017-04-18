@@ -7,7 +7,7 @@ describe(`Reducer: App`, () => {
       expect(initialState).toMatchSnapshot();
     });
 
-    it(`handles RESTORE_STATE`, () => {
+    it(`handles SET_STATE`, () => {
       const savedState = {
         snippet: `print('test')`,
         snippetTitle: `Test Snippet`,
@@ -24,7 +24,7 @@ describe(`Reducer: App`, () => {
         filters: {}
       };
       const action = {
-        type: actions.RESTORE_STATE,
+        type: actions.SET_STATE,
         payload: savedState,
       };
       expect(reducer(undefined, action)).toEqual(savedState);

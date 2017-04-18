@@ -1,7 +1,7 @@
 import * as actions from '../../src/actions/app';
 
 describe(`Actions: App`, () => {
-  describe(`RESTORE_STATE`, () => {
+  describe(`SET_STATE`, () => {
     it(`creates an action that restores state`, () => {
       const savedState = {
         snippet: `print('test')`,
@@ -19,10 +19,10 @@ describe(`Actions: App`, () => {
         filters: {}
       };
       const expected = {
-        type: actions.RESTORE_STATE,
+        type: actions.SET_STATE,
         payload: savedState,
       };
-      expect(actions.restoreState(savedState)).toEqual(expected);
+      expect(actions.setState(savedState)).toEqual(expected);
     });
   });
 });

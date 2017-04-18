@@ -1,6 +1,6 @@
-export const RESTORE_STATE = 'RESTORE_STATE';
+export const SET_STATE = 'RESTORE_STATE';
 
-export const restoreState = (newState) => ({
-  type: RESTORE_STATE,
+export const setState = (newState) => ({
+  type: SET_STATE,
   payload: newState,
 });
