@@ -1,6 +1,7 @@
-import React, {Component, PropTypes} from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import React, {Component, PropTypes} from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import AppBody from './AppBody'
 
 const mockReducer = (state={}, action) => state
 
@@ -12,14 +13,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={this.store}>
-        <div>Ello govna?</div>
+        <AppBody {...this.props} />
       </Provider>
     );
   }
-}
-
-App.propTypes = {
-  snippetKey: PropTypes.string.required,
 }
 
 export default App
