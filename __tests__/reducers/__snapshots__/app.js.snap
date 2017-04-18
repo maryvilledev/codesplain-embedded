@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reducer: App initialState matches snapshot 1`] = `
+Object {
+  "AST": Object {},
+  "annotations": Object {},
+  "filters": Object {},
+  "snippet": "",
+  "snippetKey": "",
+  "snippetLanguage": "python3",
+  "snippetTitle": "",
+}
+`;
