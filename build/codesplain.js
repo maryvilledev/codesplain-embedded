@@ -12612,7 +12612,7 @@ var AppBody = function (_Component) {
           snippetKey = _props.snippetKey;
 
       _axios2.default.get("../public/snippet.json").then(function (res) {
-        console.log(JSON.parse(res.data).snippetTitle);
+        console.log(res.data.snippetTitle);
       });
     }
   }, {

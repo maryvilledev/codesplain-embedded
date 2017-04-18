@@ -7,7 +7,7 @@ class AppBody extends Component {
     const { dispatch, snippetKey } = this.props;
     axios.get("../public/snippet.json")
       .then((res) => {
-        console.log(JSON.parse(res.data).snippetTitle);
+        console.log(res.data.snippetTitle)
       });
   }
   render() {
