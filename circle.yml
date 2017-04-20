@@ -6,7 +6,7 @@ dependencies:
     - yarn
 test:
   override:
-    - yarn test
+    - yarn run test:circle
 deployment:
   master:
     branch: master
