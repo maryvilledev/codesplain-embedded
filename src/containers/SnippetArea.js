@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import Editor from '../components/Editor';
+
 class SnippetArea extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +15,8 @@ class SnippetArea extends Component {
       <div>
         <h1>{title}</h1>
         <h3>A {language} snippet</h3>
-        <textarea
-          value={snippet}
-          readOnly={true}
+        <Editor
+          snippet={snippet}
         />
       </div>
     );
