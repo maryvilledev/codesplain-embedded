@@ -25,4 +25,14 @@ describe(`Actions: App`, () => {
       expect(actions.setState(savedState)).toEqual(expected);
     });
   });
+  describe(`SET_SELECTED_LINE`, () => {
+    it(`creates an action that sets the selected line`, () => {
+      const selectedLine = 0;
+      const expected = {
+        type: actions.SET_SELECTED_LINE,
+        payload: selectedLine,
+      };
+      expect(actions.setSelectedLine(selectedLine)).toEqual(expected);
+    })
+  })
 });
