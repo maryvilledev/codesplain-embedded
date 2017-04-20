@@ -1,2 +1,5 @@
 # Ignore npm packages
 node_modules
+
+# Dear God don't commit ssh keys
+.ssh
