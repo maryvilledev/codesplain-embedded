@@ -4,18 +4,23 @@ import axios from 'axios';
 import { setState } from '../actions/app';
 
 import SnippetArea from './SnippetArea';
+import AnnotationDisplay from './AnnotationDisplay';
 
 class AppBody extends Component {
   componentDidMount() {
     const { dispatch, snippetKey } = this.props;
-    axios.get("../public/snippet.json")
+    axios.get("../snippet.json")
       .then((res) => {
         dispatch(setState(res.data));
       });
   }
   render() {
     return (
-      <SnippetArea />
+      <div>
+        <SnippetArea />
+        <AnnotationDisplay />
+      </div>
+
     );
   }
 }

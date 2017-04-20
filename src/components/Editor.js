@@ -25,6 +25,13 @@ const pushValueToCodeMirror = (value, codeMirror) => {
 class Editor extends Component {
   constructor(props) {
     super(props);
+
+    this.handleGutterClick = this.handleGutterClick.bind(this);
+  }
+
+  componentDidMount() {
+    const codeMirror = this.codeMirror.getCodeMirror();
+    codeMirror.on('gutterClick', this.handleGutterClick);
   }
 
   componentDidUpdate() {
@@ -43,6 +50,12 @@ class Editor extends Component {
     markedLines.forEach((lineNumber) => {
       codeMirror.setGutterMarker(Number(lineNumber), 'annotations', makeMarker());
     });
+  }
+
+  handleGutterClick(instance, lineNumber) {
+    const { onGutterClick } = this.props;
+    const lineText = instance.getLine(lineNumber);
+    onGutterClick(lineNumber, lineText);
   }
 
   render() {

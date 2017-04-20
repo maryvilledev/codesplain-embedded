@@ -1,11 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { setSelectedLine } from '../actions/app';
+
 import Editor from '../components/Editor';
 
 class SnippetArea extends Component {
   constructor(props) {
     super(props);
+    this.handleGutterClick = this.handleGutterClick.bind(this);
+  }
+
+  handleGutterClick(line) {
+    const { dispatch } = this.props;
+    dispatch(setSelectedLine(line));
   }
 
   render() {
@@ -24,6 +32,7 @@ class SnippetArea extends Component {
         <Editor
           snippet={snippet}
           markedLines={markedLines}
+          onGutterClick={this.handleGutterClick}
         />
       </div>
     );
