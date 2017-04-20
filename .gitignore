@@ -1,7 +1,2 @@
 # Ignore npm packages
 node_modules
-
-# Ignore webpack build
-build/codesplain.js
-
-yarn.lock
