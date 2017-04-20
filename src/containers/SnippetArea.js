@@ -9,7 +9,13 @@ class SnippetArea extends Component {
   }
 
   render() {
-    const { snippet, title, language } = this.props;
+    const {
+      snippet,
+      title,
+      language,
+      annotations,
+    } = this.props;
+    const markedLines = Object.keys(annotations).map(key => Number(key));
 
     return (
       <div>
@@ -17,6 +23,7 @@ class SnippetArea extends Component {
         <h3>A {language} snippet</h3>
         <Editor
           snippet={snippet}
+          markedLines={markedLines}
         />
       </div>
     );
@@ -27,6 +34,7 @@ const mapStateToProps = (state) => ({
   snippet:  state.snippet,
   title:    state.snippetTitle,
   language: state.snippetLanguage,
+  annotations: state.annotations,
 });
 
 export default connect(mapStateToProps)(SnippetArea);
