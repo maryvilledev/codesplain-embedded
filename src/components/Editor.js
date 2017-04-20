@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
 
+import 'codemirror/lib/codemirror.css';
+
 const codeMirrorOptions = {
   lineNumbers: true,
   lineWrapping: true,
