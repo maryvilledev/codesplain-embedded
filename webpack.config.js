@@ -1,4 +1,5 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -13,7 +14,10 @@ module.exports = {
       })
     }]
   },
+  devServer: {
+    contentBase: [path.join(__dirname, "public"), path.join(__dirname, "build")]
+  },
   plugins: [
     new ExtractTextPlugin('codesplain.css')
-  ]
+  ],
 }

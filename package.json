@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "axios": "^0.16.1",
@@ -24,6 +25,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "webpack": "^2.3.3"
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }
