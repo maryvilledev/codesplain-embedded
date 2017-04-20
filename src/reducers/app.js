@@ -15,6 +15,12 @@ const app = (state = initialState, action) => {
     case actions.SET_STATE: {
       return Object.assign({}, action.payload);
     }
+    case actions.SET_SELECTED_LINE: {
+      return {
+        ...state,
+        selectedLine: action.payload,
+      }
+    }
     default: {
       return state;
     }
