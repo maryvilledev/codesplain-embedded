@@ -1,5 +1,8 @@
 # Ignore npm packages
 node_modules
 
+# Ignore build directory
+build
+
 # Dear God don't commit ssh keys
 .ssh
