@@ -1,5 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack')
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -18,6 +19,7 @@ module.exports = {
     contentBase: [path.join(__dirname, "public"), path.join(__dirname, "build")]
   },
   plugins: [
-    new ExtractTextPlugin('codesplain.css')
+    new ExtractTextPlugin('codesplain.css'),
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
 }
