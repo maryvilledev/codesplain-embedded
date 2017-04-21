@@ -2,6 +2,7 @@
 
 git clone git@github.com:maryvilledev/RunestoneComponents.git
 cp build/codesplain.js RunestoneComponents/runestone/codesplain/js/
+cp build/codesplain.css RunestoneComponents/runestone/codesplain/css/
 cd RunestoneComponents
 git add .
 git commit -m "circle build $CIRCLE_SHA1"
