@@ -4,6 +4,7 @@ git clone git+ssh://git@github.com/maryvilledev/RunestoneComponents.git
 cp build/codesplain.js RunestoneComponents/runestone/codesplain/js/
 cp build/codesplain.css RunestoneComponents/runestone/codesplain/css/
 cd RunestoneComponents
+git status
 git commit -am "circle build $CIRCLE_SHA1"
 git remote set-url origin git+ssh://git@github.com/maryvilledev/RunestoneComponents.git
 git push origin master
