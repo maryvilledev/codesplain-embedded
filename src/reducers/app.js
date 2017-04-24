@@ -8,6 +8,7 @@ export const initialState = {
   snippet: '',
   snippetKey: '',
   snippetTitle: '',
+  selectedLine: undefined,
 };
 
 const app = (state = initialState, action) => {
@@ -16,6 +17,12 @@ const app = (state = initialState, action) => {
       return Object.assign({}, action.payload);
     }
     case actions.SET_SELECTED_LINE: {
+      if (state.selectedLine === action.payload) {
+        return {
+          ...state,
+          selectedLine: undefined,
+        };
+      }
       return {
         ...state,
         selectedLine: action.payload,
