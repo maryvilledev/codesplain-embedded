@@ -6,10 +6,13 @@ import { setState } from '../actions/app';
 import SnippetArea from './SnippetArea';
 import AnnotationDisplay from './AnnotationDisplay';
 
+const API_URL = process.env.API_URL;
+
 class AppBody extends Component {
   componentDidMount() {
     const { dispatch, snippetKey } = this.props;
-    axios.get("../snippet.json")
+    const [user, snippet] = snippetKey.split("/");
+    axios.get(`${API_URL}/users/${user}/snippets/${snippet}`)
       .then((res) => {
         dispatch(setState(res.data));
       });
@@ -20,7 +23,6 @@ class AppBody extends Component {
         <SnippetArea />
         <AnnotationDisplay />
       </div>
-
     );
   }
 }
