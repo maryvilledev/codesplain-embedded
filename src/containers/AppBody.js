@@ -6,6 +6,14 @@ import { setState } from '../actions/app';
 import SnippetArea from './SnippetArea';
 import AnnotationDisplay from './AnnotationDisplay';
 
+const styles = {
+  container: {
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'space-evenly',
+  },
+};
+
 class AppBody extends Component {
   componentDidMount() {
     const { dispatch, snippetKey } = this.props;
@@ -16,7 +24,7 @@ class AppBody extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={styles.container}>
         <SnippetArea />
         <AnnotationDisplay />
       </div>

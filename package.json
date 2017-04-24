@@ -13,6 +13,7 @@
     "axios": "^0.16.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "css-loader": "^0.28.0",
+    "highlight.js": "^9.11.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
     "react-codemirror": "^0.3.0",
