@@ -59,9 +59,6 @@ export function highlightNode(codeMirror, node, filters, parentColor, rules, ign
   // If we aren't ignoring this token...
   if (ignoredRules.indexOf(node.type) === -1) {
     const rule = rules[node.type]; // Get the rule obj for this rule
-    if (!rule) {
-      return; // Remove this return and the highlighting will sometimes fail
-    }
     // Use this node's color if it has one
     if (rule.color) {
       color = rule.color;

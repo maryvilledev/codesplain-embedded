@@ -39,7 +39,6 @@ class Editor extends Component {
   componentDidUpdate() {
     const {
       markedLines,
-      openLine,
       AST,
       filters,
       snippet,

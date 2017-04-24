@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { setSelectedLine } from '../actions/app';
@@ -28,6 +28,8 @@ class SnippetArea extends Component {
       title,
       language,
       annotations,
+      AST,
+      filters
     } = this.props;
     const markedLines = Object.keys(annotations).map(key => Number(key));
 
@@ -40,6 +42,8 @@ class SnippetArea extends Component {
           markedLines={markedLines}
           onGutterClick={this.handleGutterClick}
           language={language}
+          AST={AST}
+          filters={filters}
         />
       </div>
     );
@@ -51,6 +55,8 @@ const mapStateToProps = (state) => ({
   title:    state.snippetTitle,
   language: state.snippetLanguage,
   annotations: state.annotations,
+  AST: state.AST,
+  filters: state.filters
 });
 
 export default connect(mapStateToProps)(SnippetArea);
