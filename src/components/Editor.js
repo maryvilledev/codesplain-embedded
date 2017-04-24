@@ -3,6 +3,8 @@ import CodeMirror from 'react-codemirror';
 
 import 'codemirror/lib/codemirror.css';
 
+import highlight from '../lib/highlight'
+
 const codeMirrorOptions = {
   lineNumbers: true,
   lineWrapping: true,
