@@ -2,7 +2,7 @@
   "annotations":{
     "0":{
       "annotation":"This prints \"test\" to stdout.",
-      "lineNumber":0,
+      "lineNumber": 0,
       "lineText":"print('test')"
     }
   },
