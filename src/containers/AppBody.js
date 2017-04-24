@@ -26,7 +26,7 @@ class AppBody extends Component {
 }
 
 AppBody.propTypes = {
-  snippetKey: PropTypes.string.required,
+  snippetKey: PropTypes.string.isRequired,
 }
 
 export default connect()(AppBody);
