@@ -27,8 +27,7 @@ class AnnotationDisplay extends Component {
         </div>
       );
     }
-
-    const annotation = annotations[selectedLine + 1];
+    const annotation = annotations[selectedLine];
     return (
       <div style={styles.container}>
         <h1>Annotation</h1>

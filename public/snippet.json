@@ -1,8 +1,8 @@
 {
   "annotations":{
-    "1":{
+    "0":{
       "annotation":"This prints \"test\" to stdout.",
-      "lineNumber":1,
+      "lineNumber": 0,
       "lineText":"print('test')"
     }
   },
