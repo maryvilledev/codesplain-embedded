@@ -33,6 +33,7 @@ class SnippetArea extends Component {
           snippet={snippet}
           markedLines={markedLines}
           onGutterClick={this.handleGutterClick}
+          language={language}
         />
       </div>
     );

@@ -3,7 +3,7 @@ import CodeMirror from 'react-codemirror';
 
 import 'codemirror/lib/codemirror.css';
 
-import highlight from '../lib/highlight'
+import highlight from '../lib/highlight';
 
 const codeMirrorOptions = {
   lineNumbers: true,
@@ -43,6 +43,7 @@ class Editor extends Component {
       AST,
       filters,
       snippet,
+      language
     } = this.props;
 
     const codeMirror = this.codeMirror.getCodeMirror();
@@ -52,6 +53,7 @@ class Editor extends Component {
     markedLines.forEach((lineNumber) => {
       codeMirror.setGutterMarker(Number(lineNumber), 'annotations', makeMarker());
     });
+    highlight(codeMirror, AST, filters, language);
   }
 
   handleGutterClick(instance, lineNumber) {
