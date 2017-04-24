@@ -1,4 +1,5 @@
 import axios from 'axios';
+import _ from 'lodash'
 
 const API_URL = process.env.API_URL;
 
@@ -52,7 +53,7 @@ export function styleRegion(codeMirror, start, end, css) {
 Recursive function for highlighting code in a CodeMirror. highlight() is an
 exported wrapper func for this, and starts the recursion.
 */
-export function highlightNode(codeMirror, node, filters, parentColor) {
+export function highlightNode(codeMirror, node, filters, parentColor, rules, ignoredRules) {
   let color = parentColor;
 
   // If we aren't ignoring this token...
@@ -77,7 +78,7 @@ export function highlightNode(codeMirror, node, filters, parentColor) {
 
   // Highlight all children of this token
   node.children.forEach((child) => {
-    if (_.isObject(child)) { highlightNode(codeMirror, child, filters, color); }
+    if (_.isObject(child)) { highlightNode(codeMirror, child, filters, color, rules, ignoredRules); }
   });
 }
 
@@ -106,7 +107,7 @@ objects to apply highlighting to the code in the CodeMirror editor.
 export default async function highlight(codeMirror, AST, filters, language) {
   const [rules, ignoredRules] = await getRules(language);
   // Make this a first-class function
-  const func = () => highlightNode(codeMirror, AST, filters, 'transparent');
+  const func = () => highlightNode(codeMirror, AST, filters, 'transparent', rules, ignoredRules);
   // Codemirror buffers its calls ahead of time, then performs them atomically
   codeMirror.operation(func);
 }
