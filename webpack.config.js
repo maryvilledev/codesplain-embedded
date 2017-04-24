@@ -1,3 +1,4 @@
+require('dotenv').config();
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack')
