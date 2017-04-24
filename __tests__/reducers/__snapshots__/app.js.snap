@@ -5,6 +5,7 @@ Object {
   "AST": Object {},
   "annotations": Object {},
   "filters": Object {},
+  "selectedLine": undefined,
   "snippet": "",
   "snippetKey": "",
   "snippetLanguage": "python3",

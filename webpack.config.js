@@ -10,6 +10,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {useEslintrc: false, baseConfig: { extends: ['react-app']}}
+      },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
       { test: /\.css$/, use: ExtractTextPlugin.extract({
         use: 'css-loader'

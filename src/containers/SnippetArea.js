@@ -5,6 +5,12 @@ import { setSelectedLine } from '../actions/app';
 
 import Editor from '../components/Editor';
 
+const styles = {
+  container: {
+    flex: '1 1 auto',
+  },
+};
+
 class SnippetArea extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +32,7 @@ class SnippetArea extends Component {
     const markedLines = Object.keys(annotations).map(key => Number(key));
 
     return (
-      <div>
+      <div style={styles.container}>
         <h1>{title}</h1>
         <h3>A {language} snippet</h3>
         <Editor
