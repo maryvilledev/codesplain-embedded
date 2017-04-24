@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.0",
     "jest": "^19.0.2",
     "lodash": "^4.17.4",
