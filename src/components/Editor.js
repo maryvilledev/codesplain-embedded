@@ -3,7 +3,7 @@ import CodeMirror from 'react-codemirror';
 
 import 'codemirror/lib/codemirror.css';
 
-import highlight from '../lib/highlight';
+import highlight from '../util/highlight';
 
 const codeMirrorOptions = {
   lineNumbers: true,
