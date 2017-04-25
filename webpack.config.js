@@ -9,7 +9,14 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {useEslintrc: false, baseConfig: { extends: ['react-app']}}
+      },
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" },
       { test: /\.css$/, use: ExtractTextPlugin.extract({
         use: 'css-loader'
       })
@@ -22,4 +29,7 @@ module.exports = {
     new ExtractTextPlugin('codesplain.css'),
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 }
