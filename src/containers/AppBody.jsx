@@ -4,6 +4,7 @@ import axios from 'axios';
 import { setState } from '../actions/app';
 
 import AnnotationDisplay from './AnnotationDisplay';
+import RulesSelector from '../components/RulesSelector';
 import SnippetArea from './SnippetArea';
 
 const API_URL = process.env.API_URL;
@@ -27,6 +28,7 @@ class AppBody extends Component {
   render() {
     return (
       <div style={styles.container}>
+        <RulesSelector />
         <SnippetArea />
         <AnnotationDisplay />
       </div>
