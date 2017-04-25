@@ -7,6 +7,7 @@ import AnnotationDisplay from './AnnotationDisplay';
 import RulesSelector from '../components/RulesSelector';
 import SnippetArea from './SnippetArea';
 
+const API_URL = process.env.API_URL;
 const styles = {
   container: {
     display: 'flex',
@@ -18,7 +19,8 @@ const styles = {
 class AppBody extends Component {
   componentDidMount() {
     const { dispatch, snippetKey } = this.props;
-    axios.get("../snippet.json")
+    const [user, snippet] = snippetKey.split("/");
+    axios.get(`${API_URL}/users/${user}/snippets/${snippet}`)
       .then((res) => {
         dispatch(setState(res.data));
       });
