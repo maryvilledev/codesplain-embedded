@@ -22,6 +22,9 @@ class AppBody extends Component {
     const [user, snippet] = snippetKey.split("/");
     axios.get(`${API_URL}/users/${user}/snippets/${snippet}`)
       .then((res) => {
+        // Some old snippets don't have a snippetLanguage field, so
+        // assume they are 'python3'
+        if (!res.data.snippetLanguage) { res.data.snippetLanguage = 'python3'; }
         dispatch(setState(res.data));
       });
   }
