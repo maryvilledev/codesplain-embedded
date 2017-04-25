@@ -11,10 +11,6 @@ const styles = {
 };
 
 class AnnotationDisplay extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       annotations,
