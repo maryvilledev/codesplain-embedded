@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import App from './containers/App';
-
-const style = {
-  font: "12pt sans-serif"
-}
 
 window.onload = () => {
   document.querySelectorAll('[data-component=codesplain]')
