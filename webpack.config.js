@@ -17,7 +17,7 @@ module.exports = {
         loader: "eslint-loader",
         options: {useEslintrc: false, baseConfig: { extends: ['react-app']}}
       },
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" },
       { test: /\.css$/, use: ExtractTextPlugin.extract({
         use: 'css-loader'
       })
@@ -31,4 +31,7 @@ module.exports = {
     new ExtractTextPlugin('codesplain.css'),
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
 }
