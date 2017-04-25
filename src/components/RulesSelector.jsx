@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 
 import RuleLabel from './RuleLabel';
 
+const styles = {
+  container: {
+    flex: '0 1 auto',
+  },
+};
+
 const makeListItems = (filters) => (
   Object.keys(filters)
     .map((filterName) => {
@@ -25,7 +31,7 @@ const makeListItems = (filters) => (
 const RulesSelector = ({ filters }) => {
   const listItems = makeListItems(filters);
   return (
-    <div>
+    <div style={styles.container}>
       <h1>Rules</h1>
       {listItems}
     </div>
