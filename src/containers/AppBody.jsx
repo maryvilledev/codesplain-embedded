@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { setState } from '../actions/app';
 
-import SnippetArea from './SnippetArea';
 import AnnotationDisplay from './AnnotationDisplay';
+import SnippetArea from './SnippetArea';
 
 const styles = {
   container: {
