@@ -8,9 +8,8 @@ git add .
 git status
 git config user.name "Codesplain Bot"
 git config user.email "support@codesplain.io"
-git commit -m "circle build $CIRCLE_SHA1"
+git commit -m "codesplain PR $CI_PULL_REQUEST"
 git remote set-url origin git+ssh://git@github.com/maryvilledev/RunestoneComponents.git
 git push origin master
 
 exit
-
