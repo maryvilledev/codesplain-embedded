@@ -7,6 +7,7 @@ import markdownRendererOptions from '../util/markdown-renderer-options';
 const styles = {
   container: {
     flex: '1 1 auto',
+    maxWidth: '50%',
   },
 };
 
