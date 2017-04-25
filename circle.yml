@@ -12,6 +12,6 @@ deployment:
     branch: master
     commands:
       - yarn build:
-        environment:
-          API_URL: https://api.codesplain.io/prod
+          environment:
+            API_URL: https://api.codesplain.io/prod
       - ./deploy
