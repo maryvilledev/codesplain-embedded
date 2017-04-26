@@ -10,6 +10,14 @@ import Title from './Title';
 
 const API_URL = process.env.API_URL;
 const styles = {
+  title: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  rules: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   container: {
     display: 'flex',
     flexFlow: 'row wrap',
@@ -29,8 +37,12 @@ class AppBody extends Component {
   render() {
     return (
       <div>
-        <Title />
-        <RulesSelector />
+        <div style={styles.title}>
+          <Title />
+        </div>
+        <div style={styles.rules}>
+          <RulesSelector />
+        </div>
         <div style={styles.container}>
           <SnippetArea />
           <AnnotationDisplay />
