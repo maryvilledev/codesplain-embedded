@@ -32,7 +32,6 @@ const RulesSelector = ({ filters }) => {
   const listItems = makeListItems(filters);
   return (
     <div style={styles.container}>
-      <h1>Rules</h1>
       {listItems}
     </div>
   );
