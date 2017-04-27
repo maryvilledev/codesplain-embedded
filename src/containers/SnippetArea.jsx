@@ -8,6 +8,7 @@ import Editor from '../components/Editor';
 const styles = {
   container: {
     flex: '1 1 auto',
+    marginTop: '30px',
   },
 };
 
@@ -25,7 +26,6 @@ class SnippetArea extends Component {
   render() {
     const {
       snippet,
-      title,
       language,
       annotations,
       AST,
@@ -35,8 +35,6 @@ class SnippetArea extends Component {
 
     return (
       <div style={styles.container}>
-        <h1>{title}</h1>
-        <h3>A {language} snippet</h3>
         <Editor
           snippet={snippet}
           markedLines={markedLines}
@@ -52,7 +50,6 @@ class SnippetArea extends Component {
 
 const mapStateToProps = (state) => ({
   snippet:  state.snippet,
-  title:    state.snippetTitle,
   language: state.snippetLanguage,
   annotations: state.annotations,
   AST: state.AST,

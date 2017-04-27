@@ -9,6 +9,7 @@ const codeMirrorOptions = {
   lineNumbers: true,
   lineWrapping: true,
   gutters: ['annotations', 'CodeMirror-linenumbers'],
+  readOnly: true,
 };
 
 const makeMarker = () => {
