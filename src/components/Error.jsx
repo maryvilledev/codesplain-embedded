@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 
 const style = {
-  backgroundColor: '#FF8080',
+  border: ' 8px solid #FF8080',
   textAlign: 'center',
   padding: '10px',
   paddingBottom: '20px',
-  borderRadius: '50px',
+  borderRadius: '10px',
 }
 
 const Error = ({ snippetKey }) => (
