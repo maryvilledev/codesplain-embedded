@@ -44,9 +44,8 @@ class AppBody extends Component {
           <AnnotationDisplay />
         </div>
       );
-    } else {
-      return <Error snippetKey={snippetKey} />
     }
+    return (<Error snippetKey={snippetKey} />);
   }
 }
 
