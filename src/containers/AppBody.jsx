@@ -6,6 +6,7 @@ import { setState } from '../actions/app';
 import AnnotationDisplay from './AnnotationDisplay';
 import RulesSelector from '../components/RulesSelector';
 import SnippetArea from './SnippetArea';
+import Error from '../components/Error';
 import Title from './Title';
 
 const API_URL = process.env.API_URL;
@@ -26,6 +27,10 @@ const styles = {
 };
 
 class AppBody extends Component {
+  constructor() {
+    super();
+    this.state = {error: false};
+  }
   componentDidMount() {
     const { dispatch, snippetKey } = this.props;
     const [user, snippet] = snippetKey.split('/');
@@ -35,23 +40,31 @@ class AppBody extends Component {
         // assume they are 'python3'
         if (!res.data.snippetLanguage) { res.data.snippetLanguage = 'python3'; }
         dispatch(setState(res.data));
+      })
+      .catch(() => {
+        this.setState({error: true})
       });
   }
   render() {
-    return (
-      <div>
-        <div style={styles.title}>
-          <Title />
+    const { snippetKey } = this.props;
+    const { error } = this.state;
+    if (!error) {
+      return (
+        <div>
+          <div style={styles.title}>
+            <Title />
+          </div>
+          <div style={styles.rules}>
+            <RulesSelector />
+          </div>
+          <div style={styles.container}>
+            <SnippetArea />
+            <AnnotationDisplay />
+          </div>
         </div>
-        <div style={styles.rules}>
-          <RulesSelector />
-        </div>
-        <div style={styles.container}>
-          <SnippetArea />
-          <AnnotationDisplay />
-        </div>
-      </div>
-    );
+      );
+    }
+    return (<Error snippetKey={snippetKey} />);
   }
 }
 
