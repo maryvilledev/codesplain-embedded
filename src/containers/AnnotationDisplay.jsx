@@ -9,6 +9,10 @@ const styles = {
     flex: '1 1 auto',
     maxWidth: '50%',
   },
+  buttonContainer: {
+    display: 'inline-flex',
+    justifyContent: 'flex-start',
+  },
 };
 
 class AnnotationDisplay extends Component {
@@ -28,6 +32,18 @@ class AnnotationDisplay extends Component {
     return (
       <div style={styles.container}>
         <h1>Annotation</h1>
+        <div style={styles.buttonContainer}>
+          <button
+            type="button"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+          >
+            Next
+          </button>
+        </div>
         <MarkdownRenderer
           markdown={annotation.annotation}
           options={markdownRendererOptions}
