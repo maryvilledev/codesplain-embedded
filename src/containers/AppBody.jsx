@@ -48,11 +48,12 @@ class AppBody extends Component {
   render() {
     const { snippetKey } = this.props;
     const { error } = this.state;
+    const properAddress = `https://www.codesplain.io/${snippetKey}`;
     if (!error) {
       return (
         <div>
           <div style={styles.title}>
-            <Title />
+            <Title link={properAddress}/>
           </div>
           <div style={styles.rules}>
             <RulesSelector />

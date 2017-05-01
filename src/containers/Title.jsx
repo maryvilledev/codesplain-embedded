@@ -9,21 +9,33 @@ const prettyLangName = {
 const styles = {
   title: {
     marginBottom: 0,
+    backgroundColor: '#99ccff',
+    color: 'black',
+    textAlign: 'center',
+    padding: '5px',
+    border: '1px solid #0099ff',
+    borderRadius: '5px',
+    margin: 'auto'
   },
   language: {
     marginTop: 0,
     color: '#a6a6a6',
   },
+  link: {
+    textDecoration: 'none',
+  }
 };
 
 class Title extends Component {
   render() {
-    const { language, title } = this.props;
+    const { language, title, link } = this.props;
     return (
       <div>
-        <h1 style={styles.title}>
-          {title}
-        </h1>
+        <a href={link} style={styles.link} target="_blank" rel="noopener noreferrer">
+          <h1 style={styles.title}>
+            {title}
+          </h1>
+        </a>
         <h3 style={styles.language}>
           {prettyLangName[language]}
         </h3>
