@@ -8,6 +8,7 @@ const styles = {
   container: {
     flex: '1 1 auto',
     maxWidth: '50%',
+    paddingLeft: '25px',
   },
 };
 
