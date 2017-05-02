@@ -20,6 +20,12 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
   },
+  wrapper: {
+    margin: '15px',
+    padding: '10px',
+    background: '#f5f6f5',
+    borderRadius: '5px',
+  },
   container: {
     display: 'flex',
     flexFlow: 'row wrap',
@@ -54,7 +60,7 @@ class AppBody extends Component {
     const { error } = this.state;
     if (!error) {
       return (
-        <div>
+        <div style={styles.wrapper}>
           <div style={styles.title}>
             <Title />
           </div>

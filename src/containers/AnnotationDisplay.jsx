@@ -7,7 +7,13 @@ import markdownRendererOptions from '../util/markdown-renderer-options';
 const styles = {
   container: {
     flex: '1 1 auto',
-    maxWidth: '50%',
+    flexBasis: '50%', // "default width"
+    paddingLeft: '15px',
+  },
+  markdownContainer: {
+    background: '#fff',
+    padding: '10px',
+    borderRadius: '5px',
   },
 };
 
@@ -20,18 +26,20 @@ class AnnotationDisplay extends Component {
     if (selectedLine === -1) {
       return (
         <div style={styles.container}>
-          <h1>Annotation</h1>
+          <h2>Annotation</h2>
         </div>
       );
     }
     const annotation = annotations[selectedLine];
     return (
       <div style={styles.container}>
-        <h1>Annotation</h1>
-        <MarkdownRenderer
-          markdown={annotation.annotation}
-          options={markdownRendererOptions}
-        />
+        <h2>Annotation</h2>
+        <div style={styles.markdownContainer}>
+          <MarkdownRenderer
+            markdown={annotation.annotation}
+            options={markdownRendererOptions}
+          />
+        </div>
       </div>
     );
   }
