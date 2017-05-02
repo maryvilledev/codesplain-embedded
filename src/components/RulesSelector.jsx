@@ -19,14 +19,16 @@ const makeListItems = (dispatchToggleRule, filters) => (
         color,
         count,
         prettyTokenName,
+        selected,
       } = filters[filterName];
       return (
         <RuleLabel
-          onClick={dispatchToggleRule}
-          key={filterName}
-          rule={prettyTokenName}
-          count={count}
           color={color}
+          count={count}
+          key={filterName}
+          onClick={dispatchToggleRule}
+          rule={prettyTokenName}
+          selected={selected}
           value={filterName}
         />
       )

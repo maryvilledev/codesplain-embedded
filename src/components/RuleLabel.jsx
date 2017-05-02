@@ -22,9 +22,9 @@ const styles = {
   },
 };
 
-const RuleLabel = ({ color, count, onClick, rule, value }) => {
-  const backgroundColor = color;
-  const borderColor = 'transparent';
+const RuleLabel = ({ color, count, onClick, rule, selected, value }) => {
+  const backgroundColor = selected ? color : 'transparent';
+  const borderColor = selected ? 'transparent' : '#e6e6e6';
 
   return (
     <div
@@ -41,6 +41,7 @@ RuleLabel.propTypes = {
   color: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
   rule: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
   value: PropTypes.string.isRequired,
 };
 
