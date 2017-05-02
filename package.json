@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "test": "jest --watchAll",
     "test:circle": "jest",
     "start": "webpack-dev-server --hot --inline"

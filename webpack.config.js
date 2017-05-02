@@ -29,9 +29,14 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin(['API_URL']),
     new ExtractTextPlugin('codesplain.css'),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   resolve: {
     extensions: ['.js', '.jsx']
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({minimize: true}) // call the uglify plugin
+  );
 }
