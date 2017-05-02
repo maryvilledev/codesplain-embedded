@@ -35,4 +35,14 @@ describe(`Actions: App`, () => {
       expect(actions.setSelectedLine(selectedLine)).toEqual(expected);
     })
   })
+  describe('TOGGLE_RULE', () => {
+    it('creates correct action object', () => {
+      const rule = 'rules are for losers';
+      const expected = {
+        type: actions.TOGGLE_RULE,
+        payload: rule,
+      };
+      expect(actions.toggleRule(rule)).toEqual(expected);
+    });
+  });
 });
