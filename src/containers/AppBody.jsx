@@ -8,7 +8,6 @@ import RulesSelector from '../components/RulesSelector';
 import SnippetArea from './SnippetArea';
 import Error from '../components/Error';
 import Title from './Title';
-import CodesplainLink from '../components/CodesplainLink'
 
 const API_URL = process.env.API_URL;
 const styles = {
@@ -59,9 +58,8 @@ class AppBody extends Component {
       return (
         <div style={styles.wrapper}>
           <div style={styles.title}>
-            <Title />
+            <Title snippetKey={snippetKey}/>
           </div>
-          <CodesplainLink snippetKey={snippetKey}/>
           <div style={styles.rules}>
             <RulesSelector />
           </div>
