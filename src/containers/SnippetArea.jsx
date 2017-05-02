@@ -8,6 +8,7 @@ import Editor from '../components/Editor';
 const styles = {
   container: {
     flex: '1 1 auto',
+    flexBasis: '50%', // "default width"
     marginTop: '30px',
   },
 };
