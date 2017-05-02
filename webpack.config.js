@@ -27,7 +27,7 @@ module.exports = {
     contentBase: [path.join(__dirname, "public"), path.join(__dirname, "build")]
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['API_URL']),
+    new webpack.EnvironmentPlugin(['API_URL', 'NODE_ENV']),
     new ExtractTextPlugin('codesplain.css'),
   ],
   resolve: {
