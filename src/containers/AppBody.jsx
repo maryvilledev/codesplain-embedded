@@ -4,10 +4,11 @@ import axios from 'axios';
 import { setState } from '../actions/app';
 
 import AnnotationDisplay from './AnnotationDisplay';
-import RulesSelector from '../components/RulesSelector';
 import SnippetArea from './SnippetArea';
-import Error from '../components/Error';
 import Title from './Title';
+import Error from '../components/Error';
+import RulesSelector from '../components/RulesSelector';
+import { getFirstAnnotation } from '../util/annotations';
 
 const API_URL = process.env.API_URL;
 const styles = {
@@ -41,11 +42,14 @@ class AppBody extends Component {
     const { dispatch, snippetKey } = this.props;
     const [user, snippet] = snippetKey.split('/');
     axios.get(`${API_URL}/users/${user}/snippets/${snippet}`)
-      .then((res) => {
+      .then(({ data }) => {
         // Some old snippets don't have a snippetLanguage field, so
         // assume they are 'python3'
-        if (!res.data.snippetLanguage) { res.data.snippetLanguage = 'python3'; }
-        dispatch(setState(res.data));
+        if (!data.snippetLanguage) {
+          data.snippetLanguage = 'python3';
+        }
+        data.selectedLine = getFirstAnnotation(data.annotations);
+        dispatch(setState(data));
       })
       .catch(() => {
         this.setState({error: true})
