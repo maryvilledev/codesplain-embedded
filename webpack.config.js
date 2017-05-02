@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin(['API_URL']),
     new ExtractTextPlugin('codesplain.css'),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    // new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   resolve: {
     extensions: ['.js', '.jsx']
