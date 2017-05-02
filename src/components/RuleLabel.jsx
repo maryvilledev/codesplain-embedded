@@ -22,12 +22,15 @@ const styles = {
   },
 };
 
-const RuleLabel = ({ color, rule, count }) => {
+const RuleLabel = ({ color, count, onClick, rule, value }) => {
   const backgroundColor = color;
   const borderColor = 'transparent';
 
   return (
-    <div style={{ ...styles.label, backgroundColor, borderColor }} >
+    <div
+      onClick={() => onClick(value)}
+      style={{ ...styles.label, backgroundColor, borderColor }}
+    >
       {rule}
       <span style={styles.countSpan}>{`(${count})`}</span>
     </div>
@@ -38,6 +41,7 @@ RuleLabel.propTypes = {
   color: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
   rule: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default RuleLabel;

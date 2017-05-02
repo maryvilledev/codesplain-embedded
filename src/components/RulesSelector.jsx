@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import RuleLabel from './RuleLabel';
+import { toggleRule } from '../actions/app';
 
 const styles = {
   container: {
@@ -11,7 +12,7 @@ const styles = {
   },
 };
 
-const makeListItems = (filters) => (
+const makeListItems = (dispatchToggleRule, filters) => (
   Object.keys(filters)
     .map((filterName) => {
       const {
@@ -21,17 +22,19 @@ const makeListItems = (filters) => (
       } = filters[filterName];
       return (
         <RuleLabel
+          onClick={dispatchToggleRule}
           key={filterName}
           rule={prettyTokenName}
           count={count}
           color={color}
+          value={filterName}
         />
       )
     })
 )
 
-const RulesSelector = ({ filters }) => {
-  const listItems = makeListItems(filters);
+const RulesSelector = ({ dispatchToggleRule, filters }) => {
+  const listItems = makeListItems(dispatchToggleRule, filters);
   return (
     <div style={styles.container}>
       {listItems}
@@ -40,6 +43,7 @@ const RulesSelector = ({ filters }) => {
 }
 
 RulesSelector.propTypes = {
+  dispatchToggleRule: PropTypes.func.isRequired,
   filters: PropTypes.shape({
     color: PropTypes.string,
     count: PropTypes.number,
@@ -57,4 +61,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(RulesSelector);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchToggleRule: (rule) => { dispatch(toggleRule(rule)); },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RulesSelector);
