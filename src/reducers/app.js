@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import * as actions from '../actions/app';
 
 export const initialState = {
@@ -17,17 +19,12 @@ const app = (state = initialState, action) => {
       return Object.assign({}, action.payload);
     }
     case actions.TOGGLE_RULE: {
-      const currentFilters = state.filters;
-      const toggledRule = action.payload;
+      const newFilters = _.clone(state.filters);
+      const rule = action.payload;
+      newFilters[rule].selected = !newFilters[rule].selected;
       return {
         ...state,
-        filters: {
-          ...currentFilters,
-          [toggledRule]: {
-            ...currentFilters[toggledRule],
-            selected: !currentFilters[toggledRule].selected,
-          },
-        },
+        filters: newFilters
       };
     }
     case actions.SET_SELECTED_LINE: {
