@@ -5,7 +5,9 @@ import RuleLabel from './RuleLabel';
 
 const styles = {
   container: {
-    flex: '0 1 auto',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
   },
 };
 
