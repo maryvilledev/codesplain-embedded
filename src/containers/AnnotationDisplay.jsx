@@ -106,14 +106,14 @@ class AnnotationDisplay extends Component {
             onClick={this.getPreviousAnnotation}
             type="button"
           >
-            Previous
+            ←
           </button>
           <button
             disabled={hasProceedingAnnotation}
             onClick={this.getNextAnnotation}
             type="button"
           >
-            Next
+            →
           </button>
         </div>
         <div style={styles.markdownContainer}>
