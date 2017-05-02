@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions: App TOGGLE_RULE creates correct action object 1`] = `
+Object {
+  "payload": "rules are for losers",
+  "type": "TOGGLE_RULE",
+}
+`;

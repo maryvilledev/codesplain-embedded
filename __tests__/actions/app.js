@@ -38,11 +38,7 @@ describe(`Actions: App`, () => {
   describe('TOGGLE_RULE', () => {
     it('creates correct action object', () => {
       const rule = 'rules are for losers';
-      const expected = {
-        type: actions.TOGGLE_RULE,
-        payload: rule,
-      };
-      expect(actions.toggleRule(rule)).toEqual(expected);
+      expect(actions.toggleRule(rule)).toMatchSnapshot();
     });
   });
 });
