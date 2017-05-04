@@ -27,11 +27,16 @@ module.exports = {
     contentBase: [path.join(__dirname, "public"), path.join(__dirname, "build")]
   },
   plugins: [
-    new webpack.EnvironmentPlugin(['API_URL']),
+    new webpack.EnvironmentPlugin(['API_URL', 'NODE_ENV']),
     new ExtractTextPlugin('codesplain.css'),
-    // new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   resolve: {
     extensions: ['.js', '.jsx']
   }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({minimize: true}) // call the uglify plugin
+  );
 }
