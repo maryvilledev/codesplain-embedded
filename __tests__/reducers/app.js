@@ -42,5 +42,21 @@ describe(`Reducer: App`, () => {
       payload: selectedLine,
     };
     expect(reducer(undefined, action)).toEqual(expected);
-  })
+  });
+  it('handles TOGGLE_RULE', () => {
+    const rule = "rules are meant to be broken";
+    const action = actions.toggleRule(rule);
+    const state = {
+      filters: {
+        [rule]: { selected: true },
+      },
+    };
+    const expected = {
+      ...state,
+      filters: {
+        [rule]: { selected: false },
+      },
+    };
+    expect(reducer(state, action)).toEqual(expected);
+  });
 });
