@@ -30,7 +30,8 @@ class SnippetArea extends Component {
       language,
       annotations,
       AST,
-      filters
+      filters,
+      openLine
     } = this.props;
     const markedLines = Object.keys(annotations).map(key => Number(key));
 
@@ -43,6 +44,7 @@ class SnippetArea extends Component {
           language={language}
           AST={AST}
           filters={filters}
+          openLine={openLine}
         />
       </div>
     );
@@ -54,7 +56,8 @@ const mapStateToProps = (state) => ({
   language: state.snippetLanguage,
   annotations: state.annotations,
   AST: state.AST,
-  filters: state.filters
+  filters: state.filters,
+  openLine: state.selectedLine
 });
 
 export default connect(mapStateToProps)(SnippetArea);
