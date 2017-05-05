@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CodesplainLink from '../components/CodesplainLink'
 
 const prettyLangName = {
   'python3': 'Python 3',
@@ -7,26 +8,34 @@ const prettyLangName = {
 };
 
 const styles = {
+  root: {
+    textAlign: 'center'
+  },
   title: {
     marginBottom: 0,
   },
   language: {
     marginTop: 0,
     color: '#a6a6a6',
+    marginBottom: 0,
   },
+  link: {
+    marginTop:0
+  }
 };
 
 class Title extends Component {
   render() {
-    const { language, title } = this.props;
+    const { language, title, snippetKey } = this.props;
     return (
-      <div>
+      <div style={styles.root}>
         <h1 style={styles.title}>
           {title}
         </h1>
         <h3 style={styles.language}>
           {prettyLangName[language]}
         </h3>
+        <CodesplainLink snippetKey={snippetKey} style={styles.link}/>
       </div>
     );
   }

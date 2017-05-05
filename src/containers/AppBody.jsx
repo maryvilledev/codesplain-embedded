@@ -62,7 +62,7 @@ class AppBody extends Component {
       return (
         <div style={styles.wrapper}>
           <div style={styles.title}>
-            <Title />
+            <Title snippetKey={snippetKey}/>
           </div>
           <div style={styles.rules}>
             <RulesSelector />
