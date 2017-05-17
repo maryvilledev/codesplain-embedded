@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Error /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "border": " 8px solid #FF8080",
+      "borderRadius": "10px",
+      "padding": "10px",
+      "paddingBottom": "20px",
+      "textAlign": "center",
+    }
+  }
+>
+  <h1>
+    Codesplain Error
+  </h1>
+  Could not load 
+  birdperson.py
+  .
+</div>
+`;
