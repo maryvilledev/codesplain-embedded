@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "marginBottom": 0,
+      }
+    }
+  >
+    The Formula For Concentrated Darkmatter
+  </h1>
+  <h3
+    style={
+      Object {
+        "color": "#a6a6a6",
+        "marginBottom": 0,
+        "marginTop": 0,
+      }
+    }
+  />
+  <CodesplainLink
+    style={
+      Object {
+        "marginTop": 0,
+      }
+    }
+  />
+</div>
+`;
