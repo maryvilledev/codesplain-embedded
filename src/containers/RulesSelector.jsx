@@ -36,7 +36,7 @@ const makeListItems = (dispatchToggleRule, filters) => (
     })
 )
 
-const RulesSelector = ({ dispatchToggleRule, filters }) => {
+export const RulesSelector = ({ dispatchToggleRule, filters }) => {
   const listItems = makeListItems(dispatchToggleRule, filters);
   return (
     <div style={styles.container}>
