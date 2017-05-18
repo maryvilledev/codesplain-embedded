@@ -8,7 +8,7 @@ describe('<AnnotationDisplay />', () => {
   it('matches snapshot', () => {
     const wrapper = shallow(
       <AnnotationDisplay
-        annotations={[{annotation: "They're just Robots!"}]}
+        annotations={[{"0": "They're just Robots!"}]}
         selectedLine={0}
       />
     );

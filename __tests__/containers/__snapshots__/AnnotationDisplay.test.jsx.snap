@@ -46,7 +46,6 @@ exports[`<AnnotationDisplay /> matches snapshot 1`] = `
     }
   >
     <MarkdownRenderer
-      markdown="They're just Robots!"
       options={
         Object {
           "highlight": [Function],
