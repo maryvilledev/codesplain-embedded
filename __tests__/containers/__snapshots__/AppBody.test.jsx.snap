@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppBody /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#f5f6f5",
+      "borderRadius": "5px",
+      "margin": "15px",
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Connect(Title)
+      snippetKey="rick-sanchez/formula_for_concentrated_dark_matter"
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Connect(RulesSelector) />
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexFlow": "row wrap",
+        "justifyContent": "space-evenly",
+      }
+    }
+  >
+    <Connect(SnippetArea) />
+    <Connect(AnnotationDisplay) />
+  </div>
+</div>
+`;

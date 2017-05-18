@@ -34,7 +34,7 @@ const styles = {
   },
 };
 
-class AppBody extends Component {
+export class AppBody extends Component {
   constructor() {
     super();
     this.state = {error: false};
