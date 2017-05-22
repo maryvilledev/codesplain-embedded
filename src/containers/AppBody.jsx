@@ -7,8 +7,8 @@ import { setState } from '../actions/app';
 import AnnotationDisplay from './AnnotationDisplay';
 import SnippetArea from './SnippetArea';
 import Title from './Title';
+import RulesSelector from './RulesSelector';
 import Error from '../components/Error';
-import RulesSelector from '../components/RulesSelector';
 import { getFirstAnnotation } from '../util/annotations';
 
 const API_URL = process.env.API_URL;
@@ -34,7 +34,7 @@ const styles = {
   },
 };
 
-class AppBody extends Component {
+export class AppBody extends Component {
   constructor() {
     super();
     this.state = {error: false};

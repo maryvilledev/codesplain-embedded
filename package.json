@@ -20,6 +20,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.0",
     "dotenv": "^4.0.0",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
@@ -39,5 +41,10 @@
     "redux": "^3.6.0",
     "webpack-dev-server": "^2.4.2",
     "webpack": "^2.3.3"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }

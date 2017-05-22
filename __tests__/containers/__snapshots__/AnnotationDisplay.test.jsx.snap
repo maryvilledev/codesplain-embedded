@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AnnotationDisplay /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "flex": "1 1 auto",
+      "flexBasis": "50%",
+      "paddingLeft": "15px",
+    }
+  }
+>
+  <h2>
+    Annotation
+  </h2>
+  <div
+    style={
+      Object {
+        "display": "inline-flex",
+        "justifyContent": "flex-start",
+      }
+    }
+  >
+    <button
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      ←
+    </button>
+    <button
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      →
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "background": "#fff",
+        "borderRadius": "5px",
+        "padding": "10px",
+      }
+    }
+  >
+    <MarkdownRenderer
+      options={
+        Object {
+          "highlight": [Function],
+          "langPrefix": "hljs language-",
+        }
+      }
+    />
+  </div>
+</div>
+`;

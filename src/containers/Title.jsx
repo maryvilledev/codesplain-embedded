@@ -24,7 +24,7 @@ const styles = {
   }
 };
 
-class Title extends Component {
+export class Title extends Component {
   render() {
     const { language, title, snippetKey } = this.props;
     return (

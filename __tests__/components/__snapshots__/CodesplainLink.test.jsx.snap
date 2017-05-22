@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CodesplainLink /> matches snapshot 1`] = `
+<a
+  href="https://www.codesplain.io/birdperson.py"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <h4>
+    birdperson.py
+  </h4>
+</a>
+`;
