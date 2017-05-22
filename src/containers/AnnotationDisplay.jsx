@@ -30,7 +30,7 @@ const styles = {
   },
 };
 
-class AnnotationDisplay extends Component {
+export class AnnotationDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {

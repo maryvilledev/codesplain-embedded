@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SnippetArea /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "flex": "1 1 auto",
+      "flexBasis": "50%",
+      "marginTop": "30px",
+    }
+  }
+>
+  <Editor
+    AST={Object {}}
+    filters={Object {}}
+    language="bad"
+    markedLines={
+      Array [
+        0,
+      ]
+    }
+    onGutterClick={[Function]}
+    openLine={0}
+    snippet="Wubba lubba Dub Dub"
+  />
+</div>
+`;

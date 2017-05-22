@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 
-import RuleLabel from './RuleLabel';
+import RuleLabel from '../components/RuleLabel';
 import { toggleRule } from '../actions/app';
 
 const styles = {
@@ -36,7 +36,7 @@ const makeListItems = (dispatchToggleRule, filters) => (
     })
 )
 
-const RulesSelector = ({ dispatchToggleRule, filters }) => {
+export const RulesSelector = ({ dispatchToggleRule, filters }) => {
   const listItems = makeListItems(dispatchToggleRule, filters);
   return (
     <div style={styles.container}>

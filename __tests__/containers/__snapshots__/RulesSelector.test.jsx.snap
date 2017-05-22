@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RulesSelector /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "justifyContent": "center",
+    }
+  }
+>
+  <RuleLabel
+    color="red"
+    count={2}
+    onClick={[Function]}
+    rule="Boolean"
+    selected={false}
+    value="bool"
+  />
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Editor /> matches snapshot 1`] = `
+<CodeMirror
+  options={
+    Object {
+      "gutters": Array [
+        "annotations",
+        "CodeMirror-linenumbers",
+      ],
+      "lineNumbers": true,
+      "lineWrapping": true,
+      "readOnly": true,
+    }
+  }
+  preserveScrollPosition={false}
+  value="Wubba lubba Dub Dub"
+/>
+`;

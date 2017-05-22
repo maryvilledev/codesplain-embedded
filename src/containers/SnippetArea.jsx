@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-class SnippetArea extends Component {
+export class SnippetArea extends Component {
   constructor(props) {
     super(props);
     this.handleGutterClick = this.handleGutterClick.bind(this);
